@@ -43,8 +43,7 @@ public class CurrencyConversionController {
 		final ExchangeValueResponse response = responseEntity.getBody();
 		
 		return new CurrencyConversionResponse(response.getId(), from, to, 
-				response.getConversionMultiple(), quantity, quantity.multiply(response.getConversionMultiple()),
-				Integer.valueOf(environment.getProperty("local.server.port")));
+				response.getConversionMultiple(), quantity, quantity.multiply(response.getConversionMultiple()), response.getPort());
 	}
 	
 	
@@ -55,7 +54,6 @@ public class CurrencyConversionController {
 		final ExchangeValueResponse response = proxy.retrieveExchangeValue(from, to);
 		
 		return new CurrencyConversionResponse(response.getId(), from, to, 
-				response.getConversionMultiple(), quantity, quantity.multiply(response.getConversionMultiple()),
-				Integer.valueOf(environment.getProperty("local.server.port")));
+				response.getConversionMultiple(), quantity, quantity.multiply(response.getConversionMultiple()), response.getPort());
 	}
 }
