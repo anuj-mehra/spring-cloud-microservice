@@ -1,3 +1,5 @@
+## Using bootstrap.yml/bootstrap.properties as we need to read the properties from a remove spring cloud config server.
+## else we could have simply used application.yml or application.properties
 server:
   port: 8100
   

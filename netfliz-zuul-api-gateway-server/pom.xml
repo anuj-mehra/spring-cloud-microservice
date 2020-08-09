@@ -5,18 +5,18 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.1.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<version>2.3.2.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.anuj.cloud.microservices</groupId>
-	<artifactId>currency-exchange-service</artifactId>
+	<artifactId>netfliz-zuul-api-gateway-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>currency-exchange-service</name>
-	<description>Demo project for currency-exchange-service</description>
+	<name>netfliz-zuul-api-gateway-server</name>
+	<description>Demo project for Netflix Zuul API Gateway</description>
 
 	<properties>
-		<java.version>1.8</java.version>
-		<spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
+		<java.version>11</java.version>
+		<spring-cloud.version>Hoxton.SR6</spring-cloud.version>
 	</properties>
 
 	<dependencies>
@@ -25,28 +25,14 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
-			<version>1.4.7.RELEASE</version>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>com.fasterxml.jackson.dataformat</groupId>
-					<artifactId>jackson-dataformat-xml</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -64,20 +50,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
-		<!-- <Swagger dependencies><start> -->
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-			<version>2.4.0</version>
-		</dependency>
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
-			<version>2.4.0</version>
-		</dependency>
-		<!-- <Swagger dependencies><end> -->
-		
 	</dependencies>
 
 	<dependencyManagement>
